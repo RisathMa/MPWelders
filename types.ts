@@ -1,7 +1,9 @@
+export type Language = 'en' | 'si';
+
 export interface Project {
   id: number;
   title: string;
-  category: 'Commercial' | 'Residential' | 'Custom' | 'Repair';
+  category: string;
   imageUrl: string;
   description: string;
 }

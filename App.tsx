@@ -6,18 +6,21 @@ import Portfolio from './components/Portfolio';
 import AIConsultant from './components/AIConsultant';
 import Contact from './components/Contact';
 import StickyCall from './components/StickyCall';
+import { LanguageProvider } from './LanguageContext';
 
 const App: React.FC = () => {
   return (
-    <div className="bg-industrial-900 min-h-screen text-gray-100 pb-12 md:pb-0">
-      <Navbar />
-      <Hero />
-      <Services />
-      <Portfolio />
-      <AIConsultant />
-      <Contact />
-      <StickyCall />
-    </div>
+    <LanguageProvider>
+      <div className="bg-industrial-900 min-h-screen text-gray-100 pb-12 md:pb-0">
+        <Navbar />
+        <Hero />
+        <Services />
+        <Portfolio />
+        <AIConsultant />
+        <Contact />
+        <StickyCall />
+      </div>
+    </LanguageProvider>
   );
 };
 

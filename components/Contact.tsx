@@ -1,8 +1,11 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
+import { useLanguage } from '../LanguageContext';
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <footer id="contact" className="bg-industrial-800 border-t border-industrial-700">
       <div className="container mx-auto px-6 py-16">
@@ -14,7 +17,7 @@ const Contact: React.FC = () => {
               MP <span className="text-safety-500">WELDERS</span>
             </h3>
             <p className="text-gray-400 mb-6 text-base leading-relaxed">
-              Your trusted partner for all iron and steel works in Sri Lanka. We build durable structures that last generations.
+              {t.contact.brandDesc}
             </p>
             <div className="flex gap-4">
               <a href={CONTACT_INFO.socials.facebook} target="_blank" rel="noreferrer" className="bg-industrial-900 p-3 rounded-full text-gray-400 hover:text-white hover:bg-[#1877F2] transition-all"><Facebook size={24} /></a>
@@ -25,7 +28,7 @@ const Contact: React.FC = () => {
 
           {/* Contact Direct Links */}
           <div>
-            <h4 className="text-white text-xl font-bold mb-6">Contact Us</h4>
+            <h4 className="text-white text-xl font-bold mb-6">{t.contact.contactTitle}</h4>
             <ul className="space-y-4">
               <li>
                 <a href={`tel:${CONTACT_INFO.phone}`} className="flex items-center gap-3 text-gray-300 hover:text-safety-500 transition-colors group">
@@ -62,28 +65,28 @@ const Contact: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white text-xl font-bold mb-6">Quick Links</h4>
+            <h4 className="text-white text-xl font-bold mb-6">{t.contact.quickLinksTitle}</h4>
             <ul className="space-y-3 text-gray-400 text-base">
-              <li><a href="#home" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-safety-500">›</span> Home</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-safety-500">›</span> Services</a></li>
-              <li><a href="#portfolio" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-safety-500">›</span> Our Works</a></li>
-              <li><a href="#ai-consultant" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-safety-500">›</span> Get Estimate</a></li>
+              <li><a href="#home" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-safety-500">›</span> {t.nav.home}</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-safety-500">›</span> {t.nav.services}</a></li>
+              <li><a href="#portfolio" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-safety-500">›</span> {t.nav.projects}</a></li>
+              <li><a href="#ai-consultant" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-safety-500">›</span> {t.nav.ai}</a></li>
             </ul>
           </div>
 
           {/* Hours */}
           <div>
-            <h4 className="text-white text-xl font-bold mb-6">Opening Hours</h4>
+            <h4 className="text-white text-xl font-bold mb-6">{t.contact.hoursTitle}</h4>
             <ul className="space-y-3 text-gray-400 text-base">
-              <li className="flex justify-between border-b border-industrial-700 pb-2"><span>Mon - Fri:</span> <span className="text-white">8:00 AM - 6:00 PM</span></li>
-              <li className="flex justify-between border-b border-industrial-700 pb-2"><span>Saturday:</span> <span className="text-white">8:00 AM - 4:00 PM</span></li>
-              <li className="flex justify-between pt-2"><span>Sunday:</span> <span className="text-safety-500 font-bold">Closed</span></li>
+              <li className="flex justify-between border-b border-industrial-700 pb-2"><span>{t.contact.monFri}</span> <span className="text-white">8:00 AM - 6:00 PM</span></li>
+              <li className="flex justify-between border-b border-industrial-700 pb-2"><span>{t.contact.sat}</span> <span className="text-white">8:00 AM - 4:00 PM</span></li>
+              <li className="flex justify-between pt-2"><span>{t.contact.sun}</span> <span className="text-safety-500 font-bold">{t.contact.closed}</span></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-industrial-700 mt-12 pt-8 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} MP Welders. Proudly Sri Lankan.
+          © {new Date().getFullYear()} {t.contact.copyright}
         </div>
       </div>
     </footer>
