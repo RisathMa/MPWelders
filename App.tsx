@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import AIConsultant from './components/AIConsultant';
+import CTASection from './components/CTASection';
 import Contact from './components/Contact';
 import StickyCall from './components/StickyCall';
 import { LanguageProvider } from './LanguageContext';
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Services />
         <Portfolio />
         <AIConsultant />
+        <CTASection />
         <Contact />
         <StickyCall />
       </div>

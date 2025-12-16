@@ -49,6 +49,11 @@ interface TranslationData {
     btnCall: string;
     btnWhatsapp: string;
   };
+  cta: {
+    title: string;
+    subtitle: string;
+    button: string;
+  };
   contact: {
     brandDesc: string;
     contactTitle: string;
@@ -138,6 +143,11 @@ export const translations: Record<'en' | 'si', TranslationData> = {
       btnCall: "Call Now",
       btnWhatsapp: "WhatsApp Quote"
     },
+    cta: {
+      title: "Ready to Build Something Strong?",
+      subtitle: "Get a free quote today and let's make your vision a reality.",
+      button: "Contact Us Now"
+    },
     contact: {
       brandDesc: "Your trusted partner for all iron and steel works in Sri Lanka. We build durable structures that last generations.",
       contactTitle: "Contact Us",
@@ -224,6 +234,11 @@ export const translations: Record<'en' | 'si', TranslationData> = {
       callAction: "ඉක්මන් මිල ගණන් ලබා ගැනීමට මෙම විස්තර අපට එවන්න!",
       btnCall: "දැන් අමතන්න",
       btnWhatsapp: "WhatsApp කරන්න"
+    },
+    cta: {
+      title: "ශක්තිමත් නිර්මාණයක් සඳහා සූදානම්ද?",
+      subtitle: "අදම නොමිලේ මිල ගණන් ලබාගෙන ඔබේ සිහිනය සැබෑ කරගන්න.",
+      button: "දැන්ම අමතන්න"
     },
     contact: {
       brandDesc: "ශ්‍රී ලංකාවේ විශ්වාසවන්තම යකඩ සහ වානේ නිර්මාණකරුවෝ. පරම්පරා ගණනක් පවතින ශක්තිමත් නිර්මාණ.",
