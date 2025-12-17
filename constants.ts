@@ -1,11 +1,11 @@
 import { Service, Project } from './types';
 
 export const CONTACT_INFO = {
-  phone: "+94 77 123 4567", // Example SL Number
-  phoneDisplay: "077 123 4567",
-  email: "contact@mpwelders.lk",
-  whatsapp: "94771234567", 
-  address: "No. 45, High Level Road, Maharagama, Sri Lanka",
+  phone: "+94772607374",
+  phoneDisplay: "077 260 7374",
+  email: "wattappala@gmail.com",
+  whatsapp: "94772607374",
+  address: "62/1/A Bauddhaloka Mawatha,Gampaha.",
   socials: {
     instagram: "https://instagram.com",
     facebook: "https://facebook.com",

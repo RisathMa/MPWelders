@@ -110,10 +110,10 @@ export const translations: Record<'en' | 'si', TranslationData> = {
         Repair: "Repair"
       },
       items: [
-        { id: 1, title: "Modern Roller Gate", category: "Residential", imageUrl: "https://images.unsplash.com/photo-1621262077976-58273673f44a?auto=format&fit=crop&q=80&w=800", description: "Remote controlled steel roller gate with wood finish inlay." },
-        { id: 2, title: "Commercial Warehouse Roof", category: "Commercial", imageUrl: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800", description: "Large scale structural steel roofing framework." },
-        { id: 3, title: "Luxury Staircase Railing", category: "Custom", imageUrl: "https://images.unsplash.com/photo-1565610098073-458bb6121403?auto=format&fit=crop&q=80&w=800", description: "Modern floating staircase with tempered glass and steel." },
-        { id: 4, title: "Excavator Bucket Restoration", category: "Repair", imageUrl: "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?auto=format&fit=crop&q=80&w=800", description: "Hard-facing and structural repair for construction equipment." },
+        { id: 1, title: "Modern Roller Gate", category: "Residential", imageUrl: "https://i.ibb.co/vC5PrhD7/539569084-1114787474078952-3826417667681148315-n.jpg", description: "Remote controlled steel roller gate with wood finish inlay." },
+        { id: 2, title: "Commercial Warehouse Roof", category: "Commercial", imageUrl: "https://i.ibb.co/qLqBms89/480453734-971974371693597-328294805776962295-n.jpg", description: "Large scale structural steel roofing framework." },
+        { id: 3, title: "Luxury Staircase Railing", category: "Custom", imageUrl: "https://i.ibb.co/CKzpDL0z/475769271-957781596446208-6384545629682845265-n.jpg", description: "Modern floating staircase with tempered glass and steel." },
+        { id: 4, title: "Rolller Door Repair", category: "Repair", imageUrl: "https://i.ibb.co/Kjfgc9rL/475645248-957898936434474-6428553518103787009-n.jpg", description: "Hard-facing and structural repair for construction equipment." },
         { id: 5, title: "Hotel Kitchen Fabrication", category: "Commercial", imageUrl: "https://images.unsplash.com/photo-1585671790691-1cb593dc49c5?auto=format&fit=crop&q=80&w=800", description: "Stainless steel worktables and shelving for commercial kitchen." },
         { id: 6, title: "Security Grills", category: "Residential", imageUrl: "https://images.unsplash.com/photo-1620610931557-494b238618e5?auto=format&fit=crop&q=80&w=800", description: "High-security window grills with decorative patterns." }
       ]
@@ -202,10 +202,10 @@ export const translations: Record<'en' | 'si', TranslationData> = {
         Repair: "අලුත්වැඩියා"
       },
       items: [
-        { id: 1, title: "නවීන රෝලර් ගේට්ටුව", category: "Residential", imageUrl: "https://images.unsplash.com/photo-1621262077976-58273673f44a?auto=format&fit=crop&q=80&w=800", description: "රිමෝට් මගින් ක්‍රියාත්මක වන ලී නිමාව සහිත රෝලර් ගේට්ටුව." },
-        { id: 2, title: "වාණිජ ගබඩා වහලය", category: "Commercial", imageUrl: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800", description: "විශාල පරිමාණයේ වාණිජ වානේ වහල රාමුව." },
-        { id: 3, title: "සුඛෝපභෝගී පඩිපෙළ", category: "Custom", imageUrl: "https://images.unsplash.com/photo-1565610098073-458bb6121403?auto=format&fit=crop&q=80&w=800", description: "ටෙම්පර්ඩ් වීදුරු සහ වානේ සහිත නවීන පඩිපෙළ." },
-        { id: 4, title: "එක්ස්කැවේටර් බකට් අලුත්වැඩියාව", category: "Repair", imageUrl: "https://images.unsplash.com/photo-1535295972055-1c762f4483e5?auto=format&fit=crop&q=80&w=800", description: "ඉදිකිරීම් උපකරණ සඳහා දෘඩ පෑස්සුම් සහ ව්‍යුහාත්මක අලුත්වැඩියාව." },
+        { id: 1, title: "නවීන රෝලර් ගේට්ටුව", category: "Residential", imageUrl: "https://i.ibb.co/vC5PrhD7/539569084-1114787474078952-3826417667681148315-n.jpg", description: "රිමෝට් මගින් ක්‍රියාත්මක වන ලී නිමාව සහිත රෝලර් ගේට්ටුව." },
+        { id: 2, title: "වාණිජ ගබඩා වහලය", category: "Commercial", imageUrl: "https://i.ibb.co/qLqBms89/480453734-971974371693597-328294805776962295-n.jpg", description: "විශාල පරිමාණයේ වාණිජ වානේ වහල රාමුව." },
+        { id: 3, title: "සුඛෝපභෝගී පඩිපෙළ", category: "Custom", imageUrl: "https://i.ibb.co/CKzpDL0z/475769271-957781596446208-6384545629682845265-n.jpg", description: "ටෙම්පර්ඩ් වීදුරු සහ වානේ සහිත නවීන පඩිපෙළ." },
+        { id: 4, title: "එක්ස්කැවේටර් බකට් අලුත්වැඩියාව", category: "Repair", imageUrl: "https://i.ibb.co/Kjfgc9rL/475645248-957898936434474-6428553518103787009-n.jpg", description: "ඉදිකිරීම් උපකරණ සඳහා දෘඩ පෑස්සුම් සහ ව්‍යුහාත්මක අලුත්වැඩියාව." },
         { id: 5, title: "හෝටල් මුළුතැන්ගෙයි උපකරණ", category: "Commercial", imageUrl: "https://images.unsplash.com/photo-1585671790691-1cb593dc49c5?auto=format&fit=crop&q=80&w=800", description: "හෝටල් සඳහා ස්ටේන්ලස් වානේ මේස සහ රාක්ක." },
         { id: 6, title: "ආරක්ෂිත ග්‍රිල්", category: "Residential", imageUrl: "https://images.unsplash.com/photo-1620610931557-494b238618e5?auto=format&fit=crop&q=80&w=800", description: "අලංකාර මෝස්තර සහිත ඉහළ ආරක්ෂිත ජනෙල් ග්‍රිල්." }
       ]
