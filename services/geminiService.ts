@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { AIAnalysisResponse, Language } from '../types';
 
-const apiKey = process.env.API_KEY || '';
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export const analyzeProjectRequest = async (userDescription: string, language: Language = 'en'): Promise<AIAnalysisResponse | null> => {
@@ -22,9 +22,9 @@ export const analyzeProjectRequest = async (userDescription: string, language: L
     3. Suggested materials relevant to the Sri Lankan market (e.g., Galvanized Iron (GI) Box bars, Tor Steel, Amano roofing sheets, Stainless Steel 304).
     4. Three critical technical questions the welder needs to ask the client to give an accurate quote.
     
-    ${language === 'si' 
-      ? 'IMPORTANT: Provide the "summary", "suggestedMaterials", and "recommendedQuestions" fields in SINHALA language. Keep "estimatedComplexity" in English (Low/Medium/High) or Sinhala equivalent if preferred.' 
-      : 'Provide the response in English.'}
+    ${language === 'si'
+        ? 'IMPORTANT: Provide the "summary", "suggestedMaterials", and "recommendedQuestions" fields in SINHALA language. Keep "estimatedComplexity" in English (Low/Medium/High) or Sinhala equivalent if preferred.'
+        : 'Provide the response in English.'}
     
     Be concise, professional, and simple to understand for a general homeowner.`;
 
@@ -39,9 +39,9 @@ export const analyzeProjectRequest = async (userDescription: string, language: L
           properties: {
             summary: { type: Type.STRING },
             estimatedComplexity: { type: Type.STRING, enum: ["Low", "Medium", "High"] },
-            suggestedMaterials: { 
-              type: Type.ARRAY, 
-              items: { type: Type.STRING } 
+            suggestedMaterials: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING }
             },
             recommendedQuestions: {
               type: Type.ARRAY,
