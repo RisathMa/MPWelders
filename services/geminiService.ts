@@ -4,10 +4,10 @@ import { AIAnalysisResponse, Language } from '../types';
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
-export const analyzeProjectRequest = async (userDescription: string, language: Language = 'en'): Promise<AIAnalysisResponse | null> => {
+export const analyzeProjectRequest = async (userDescription: string, language: Language = 'en'): Promise<AIAnalysisResponse> => {
   if (!ai) {
     console.warn("API Key is missing. AI features disabled.");
-    return null;
+    throw new Error("API Key Config Missing (Check .env.local)");
   }
 
   try {
@@ -56,10 +56,10 @@ export const analyzeProjectRequest = async (userDescription: string, language: L
     if (response.text) {
       return JSON.parse(response.text) as AIAnalysisResponse;
     }
-    return null;
+    throw new Error("Empty response from AI");
 
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error analyzing project:", error);
-    return null;
+    throw new Error(error.message || "Unknown AI Error");
   }
 };

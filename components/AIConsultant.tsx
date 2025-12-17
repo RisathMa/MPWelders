@@ -25,11 +25,9 @@ const AIConsultant: React.FC = () => {
       const result = await analyzeProjectRequest(input, language);
       if (result) {
         setAnalysis(result);
-      } else {
-        setError(t.ai.error);
       }
-    } catch (err) {
-      setError("Something went wrong. Please try again.");
+    } catch (err: any) {
+      setError(err.message || "Something went wrong.");
     } finally {
       setLoading(false);
     }
@@ -43,7 +41,7 @@ const AIConsultant: React.FC = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 items-start">
-          
+
           {/* Left Column: Intro */}
           <div className="lg:w-1/3">
             <RevealOnScroll direction="right">
@@ -58,11 +56,11 @@ const AIConsultant: React.FC = () => {
                 {t.ai.desc}
               </p>
             </RevealOnScroll>
-            
+
             <RevealOnScroll direction="right" delay={200}>
               <div className="bg-industrial-900/50 p-6 rounded-lg border border-industrial-700">
                 <h4 className="text-white font-bold mb-4 flex items-center gap-2 text-lg">
-                  <Bot size={24} className="text-safety-500"/> {t.ai.stepsTitle}
+                  <Bot size={24} className="text-safety-500" /> {t.ai.stepsTitle}
                 </h4>
                 <ul className="list-disc list-inside text-gray-300 space-y-3 text-base">
                   {t.ai.steps.map((step, i) => (
@@ -95,12 +93,12 @@ const AIConsultant: React.FC = () => {
                           placeholder="..."
                           className="w-full bg-industrial-800 text-white rounded-lg p-4 h-40 focus:ring-2 focus:ring-safety-500 focus:outline-none border border-industrial-700 resize-none text-lg placeholder-gray-500"
                         />
-                        <button 
-                          type="submit" 
+                        <button
+                          type="submit"
                           disabled={loading || !input.trim()}
                           className="absolute bottom-4 right-4 bg-safety-500 hover:bg-safety-600 text-industrial-900 font-bold p-3 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
                         >
-                          {loading ? <Loader2 className="animate-spin" size={28}/> : <Send size={28} />}
+                          {loading ? <Loader2 className="animate-spin" size={28} /> : <Send size={28} />}
                         </button>
                       </form>
                       {error && (
@@ -113,68 +111,67 @@ const AIConsultant: React.FC = () => {
                   ) : (
                     <div className="space-y-6 animate-fade-in">
                       <div className="flex justify-between items-start">
-                          <h3 className="text-xl font-bold text-white">{t.ai.resultTitle}</h3>
-                          <button 
-                            onClick={() => setAnalysis(null)} 
-                            className="text-gray-400 hover:text-white text-sm underline p-2"
-                          >
-                            {t.ai.restart}
-                          </button>
+                        <h3 className="text-xl font-bold text-white">{t.ai.resultTitle}</h3>
+                        <button
+                          onClick={() => setAnalysis(null)}
+                          className="text-gray-400 hover:text-white text-sm underline p-2"
+                        >
+                          {t.ai.restart}
+                        </button>
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-4">
-                          <div className="bg-industrial-800 p-4 rounded border border-industrial-700">
-                            <span className="text-xs text-gray-400 uppercase tracking-wider">{t.ai.labelWorkType}</span>
-                            <div className="mt-1 font-bold text-white text-lg">
-                                {analysis.summary}
-                            </div>
+                        <div className="bg-industrial-800 p-4 rounded border border-industrial-700">
+                          <span className="text-xs text-gray-400 uppercase tracking-wider">{t.ai.labelWorkType}</span>
+                          <div className="mt-1 font-bold text-white text-lg">
+                            {analysis.summary}
                           </div>
-                          <div className="bg-industrial-800 p-4 rounded border border-industrial-700">
-                            <span className="text-xs text-gray-400 uppercase tracking-wider">{t.ai.labelComplexity}</span>
-                            <div className={`mt-1 font-bold text-lg ${
-                              analysis.estimatedComplexity === 'High' ? 'text-red-400' : 
+                        </div>
+                        <div className="bg-industrial-800 p-4 rounded border border-industrial-700">
+                          <span className="text-xs text-gray-400 uppercase tracking-wider">{t.ai.labelComplexity}</span>
+                          <div className={`mt-1 font-bold text-lg ${analysis.estimatedComplexity === 'High' ? 'text-red-400' :
                               analysis.estimatedComplexity === 'Medium' ? 'text-yellow-400' : 'text-green-400'
                             }`}>
-                              {analysis.estimatedComplexity}
-                            </div>
+                            {analysis.estimatedComplexity}
                           </div>
+                        </div>
                       </div>
 
                       <div className="space-y-4">
-                          <div>
-                            <h4 className="text-safety-500 font-bold mb-2 text-sm uppercase">{t.ai.labelMaterials}</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {analysis.suggestedMaterials.map((mat, i) => (
-                                <span key={i} className="px-3 py-2 bg-industrial-700 text-gray-100 rounded text-base border border-industrial-600">
-                                  {mat}
-                                </span>
-                              ))}
-                            </div>
+                        <div>
+                          <h4 className="text-safety-500 font-bold mb-2 text-sm uppercase">{t.ai.labelMaterials}</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {analysis.suggestedMaterials.map((mat, i) => (
+                              <span key={i} className="px-3 py-2 bg-industrial-700 text-gray-100 rounded text-base border border-industrial-600">
+                                {mat}
+                              </span>
+                            ))}
                           </div>
+                        </div>
 
-                          <div>
-                            <h4 className="text-safety-500 font-bold mb-2 text-sm uppercase">{t.ai.labelQuestions}</h4>
-                            <ul className="space-y-2">
-                              {analysis.recommendedQuestions.map((q, i) => (
-                                <li key={i} className="flex gap-3 text-gray-200 bg-industrial-800/50 p-3 rounded">
-                                  <span className="text-safety-500 font-bold">{i+1}.</span>
-                                  {q}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
+                        <div>
+                          <h4 className="text-safety-500 font-bold mb-2 text-sm uppercase">{t.ai.labelQuestions}</h4>
+                          <ul className="space-y-2">
+                            {analysis.recommendedQuestions.map((q, i) => (
+                              <li key={i} className="flex gap-3 text-gray-200 bg-industrial-800/50 p-3 rounded">
+                                <span className="text-safety-500 font-bold">{i + 1}.</span>
+                                {q}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
 
                       <div className="pt-6 border-t border-industrial-800">
-                          <p className="text-center text-gray-300 mb-6 text-base">{t.ai.callAction}</p>
-                          <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <a href={`tel:${CONTACT_INFO.phone}`} className="bg-safety-500 hover:bg-safety-600 text-industrial-900 font-bold py-3 px-8 rounded flex justify-center items-center gap-2 transition-colors text-lg shadow-lg">
-                                <Phone size={20} /> {t.ai.btnCall}
-                            </a>
-                            <a href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=I need a quote for: ${analysis.summary}. ${analysis.suggestedMaterials.join(', ')}`} target="_blank" rel="noreferrer" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-8 rounded flex justify-center items-center gap-2 transition-colors text-lg shadow-lg">
-                                <MessageCircle size={20} /> {t.ai.btnWhatsapp}
-                            </a>
-                          </div>
+                        <p className="text-center text-gray-300 mb-6 text-base">{t.ai.callAction}</p>
+                        <div className="flex flex-col sm:flex-row justify-center gap-4">
+                          <a href={`tel:${CONTACT_INFO.phone}`} className="bg-safety-500 hover:bg-safety-600 text-industrial-900 font-bold py-3 px-8 rounded flex justify-center items-center gap-2 transition-colors text-lg shadow-lg">
+                            <Phone size={20} /> {t.ai.btnCall}
+                          </a>
+                          <a href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=I need a quote for: ${analysis.summary}. ${analysis.suggestedMaterials.join(', ')}`} target="_blank" rel="noreferrer" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-8 rounded flex justify-center items-center gap-2 transition-colors text-lg shadow-lg">
+                            <MessageCircle size={20} /> {t.ai.btnWhatsapp}
+                          </a>
+                        </div>
                       </div>
                     </div>
                   )}
